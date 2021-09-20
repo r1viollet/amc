@@ -2,3 +2,8 @@
 
 include("${CMAKE_CURRENT_LIST_DIR}/amcTargets.cmake")
 check_required_components("@PROJECT_NAME@")
+
+add_library(amadeus_amc INTERFACE IMPORTED)
+set_target_properties(amadeus_amc PROPERTIES
+    INTERFACE_LINK_LIBRARIES amc::amc
+)
